@@ -1,94 +1,31 @@
 package rw.ac.rca.nesa_2024.dto;
 
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
 public class CreateCustomerDTO {
+//    @NotEmpty(message = "First Name is required!")
+//    @Size(min = 3, max = 100, message = "First Name must be between 3 and 100 characters")
     private String firstName;
+//    @NotNull(message = "Last Name is required!")
+//    @Size(min = 3, max = 100, message = "Last Name must be between 3 and 100 characters")
     private String lastName;
+//    @Email(message = "Email must be a valid email non address")
     private String email;
+//    @NotNull(message = "Mobile is required!")
+//    @Size(min = 10, max = 13, message = " Mobile must be between 3 and 100 characters")
     private String mobile;
+//    @NotNull(message = "Date of Birth is required!")
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
-    private String account;
-    private Long balance;
-    private Date lastUpdateTime;
-    public CreateCustomerDTO(){
-
-    }
-
-    public CreateCustomerDTO(String firstName, String lastName, String email, String mobile, Date dob, String account, Long balance, Date lastUpdateTime) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.mobile = mobile;
-        this.dob = dob;
-        this.account = account;
-        this.balance = balance;
-        this.lastUpdateTime = lastUpdateTime;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public Long getBalance() {
-        return balance;
-    }
-
-    public Date getLastUpdateTime() {
-        return lastUpdateTime;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public void setBalance(Long balance) {
-        this.balance = balance;
-    }
-
-    public void setLastUpdateTime(Date lastUpdateTime) {
-        this.lastUpdateTime = lastUpdateTime;
-    }
 }

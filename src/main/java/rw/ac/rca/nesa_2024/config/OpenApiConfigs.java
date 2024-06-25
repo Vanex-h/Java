@@ -27,13 +27,6 @@ public class OpenApiConfigs {
                 .servers(List.of( new Server().url(url) , new Server().url("http://localhost:9900/")))
                 .components(
                         new Components()
-                                .addSecuritySchemes(
-                                        securitySchemeName,
-                                        new SecurityScheme()
-                                                .type(SecurityScheme.Type.HTTP)
-                                                .scheme("bearer")
-                                                .bearerFormat("JWT")))
-                .security(List.of(new SecurityRequirement().addList(securitySchemeName)))
-                .info(new Info().title(serviceTitle).version(serviceVersion));
+                ).info(new Info().title(serviceTitle).version(serviceVersion));
     }
 }
