@@ -27,7 +27,7 @@ public class CustomerController {
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String addCustomer(@RequestBody CreateCustomerDTO dto) {
         try {
-            System.out.println("The customer dto"+dto + customerService.getCustomerById(1));
+
             Customer c= new Customer();
             c.setFirstName(dto.getFirstName());
             c.setLastName(dto.getLastName());

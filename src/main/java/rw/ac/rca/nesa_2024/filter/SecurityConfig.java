@@ -40,8 +40,8 @@ public class SecurityConfig {
                         "/users/welcome",
                         "/users/addNewUser",
                         "/users/generateToken",
-                        "/academics/**",
-                        "/laptops/**",
+                        "/customers/**",
+                        "/message/**",
                         "/swagger-resources/**",
                         "/configuration/ui",
                         "/configuration/security",
@@ -53,10 +53,10 @@ public class SecurityConfig {
                 .exceptionHandling(exc -> exc.authenticationEntryPoint(authenticationErrorHandler()))
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/users/user/**").authenticated())
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/users/admin/**").authenticated())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/customers/**").authenticated())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/messages/**").authenticated())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/withdraw/**").authenticated())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/saving/**").authenticated())
+//                .authorizeHttpRequests(auth -> auth.requestMatchers("/customers/**").authenticated())
+//                .authorizeHttpRequests(auth -> auth.requestMatchers("/messages/**").authenticated())
+//                .authorizeHttpRequests(auth -> auth.requestMatchers("/withdraw/**").authenticated())
+//                .authorizeHttpRequests(auth -> auth.requestMatchers("/saving/**").authenticated())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)

@@ -27,7 +27,7 @@ public class MessageController {
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     private String addMessage(@RequestBody CreateMessageDTO dto) {
         try {
-            System.out.println(dto.getCustomerId());
+
             Customer customer= customerService.getCustomerById(dto.getCustomerId());
             System.out.println("The customer======>"+customer);
             Message message= new Message();
