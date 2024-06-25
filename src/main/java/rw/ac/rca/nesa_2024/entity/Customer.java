@@ -29,18 +29,16 @@ public class Customer extends TimeStampAudit {
     private String mobile;
     private Date dob;
 
-    private Date lastUpdateTime;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
     private List<BankAccount> bankAccounts;
 
-    public Customer(String firstName, String lastName, String email, String mobile, Date dob, Date lastUpdateTime) {
+    public Customer(String firstName, String lastName, String email, String mobile, Date dob) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.mobile = mobile;
         this.dob = dob;
-        this.lastUpdateTime = lastUpdateTime;
     }
 }
